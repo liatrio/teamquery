@@ -6,20 +6,20 @@
 	</head>
 
 	<div class="container">
-	  <h2>Button Styles</h2>
-	  <button type="button" class="btn">Basic</button>
+	  <h2>Register Page</h2>
+<%#	  <button type="button" class="btn">Basic</button>
 	  <button type="button" class="btn btn-default">Default</button>
 	  <button type="button" class="btn btn-primary">Primary</button>
 	  <button type="button" class="btn btn-success">Success</button>
 	  <button type="button" class="btn btn-info">Info</button>
 	  <button type="button" class="btn btn-warning">Warning</button>
 	  <button type="button" class="btn btn-danger">Danger</button>
-	  <button type="button" class="btn btn-link">Link</button>      
+	  <button type="button" class="btn btn-link">Link</button>      %>
 
     <%= form_tag("/register", method: "post") do %>
       <div>
         <%= label_tag(:q, "Email:") %>
-        <%= text_field_tag(:q) %>
+        <%= email_field_tag(:q) %>
       </div>
       <div>
         <%= label_tag(:t, "Name:") %>
@@ -31,22 +31,22 @@
       </div>
       <div>
         <%= label_tag(:v, "Password:") %>
-        <%= text_field_tag(:v) %>
+        <%= password_field_tag(:v) %>
       </div>
       <div>
         <%= label_tag(:w, "Password Confirmation:") %>
-        <%= text_field_tag(:w) %>
+        <%= password_field_tag(:w) %>
       </div>
       <%= submit_tag("Register") %>
     <% end %>
 
-    <%= form_for(@users) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <% end %>
+    <%#= form_for(@users) do |f| %>
+    <%#= f.label :name %>
+    <%#= f.text_field :name %>
+    <%# end %>
 
-    <%= form_tag do %>
-        Form contents
-    <% end %>
+    <%#= form_tag do %>
+ <!--       Form contents -->
+    <%# end %>
 	</div>
 </html>
