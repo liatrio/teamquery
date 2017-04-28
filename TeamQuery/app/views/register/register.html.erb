@@ -16,28 +16,20 @@
 	  <button type="button" class="btn btn-danger">Danger</button>
 	  <button type="button" class="btn btn-link">Link</button>      %>
 
-    <%= form_tag("/register", method: "post") do %>
+    <%= form_for(@user) do |f| %>
       <div>
-        <%= label_tag(:q, "Email:") %>
-        <%= email_field_tag(:q) %>
+        <%= f.text_field :name, :placeholder => "name" %>
       </div>
       <div>
-        <%= label_tag(:t, "Name:") %>
-        <%= text_field_tag(:t) %>
+        <%= f.email_field :email, :placeholder => "email" %>
       </div>
       <div>
-        <%= label_tag(:u, "Company:") %>
-        <%= text_field_tag(:u) %>
-      </div>
+        <%= f.password_field :password, :placeholder => "password" %>
       <div>
-        <%= label_tag(:v, "Password:") %>
-        <%= password_field_tag(:v) %>
+	<%= f.text_field :company, :placeholder => "Company name" %>
       </div>
-      <div>
-        <%= label_tag(:w, "Password Confirmation:") %>
-        <%= password_field_tag(:w) %>
       </div>
-      <%= submit_tag("Register") %>
+      <%= f.submit "Register", class: "btn-submit" %>
     <% end %>
 
     <%#= form_for(@users) do |f| %>

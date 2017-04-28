@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link href="/assets/custom.css?body=1" media="screen" rel="stylesheet">
+                <link href="/assets/bootstrap.css?body=1" media="screen" rel="stylesheet">
+        </head>
+
+        <div class="container">
+          <h2>Login Page</h2>
+    <%= form_for(:session, url: login_path) do |s| %>
+      <div>
+        <%= s.email_field :email, :placeholder => "email" %>
+      </div>
+      <div>
+        <%= s.password_field :password, :placeholder => "password" %>
+      </div>
+      <%= s.submit "Login", class: "btn-submit" %>
+    <% end %>
+        </div>
+</html>
