@@ -24,3 +24,9 @@
     </ul>
   </div>
 </nav>
+
+<% if current_user %>
+<h1> <%= current_user.name %> </h1>
+<% else %>
+<h1> Not logged in. </h1>
+<% end %>
