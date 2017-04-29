@@ -46,3 +46,8 @@ end
 # Use the following to fix javascript runtime error for uglifier
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
+
+# Use the following gem to put rails testing output in
+# Jenkins readable format.
+gem 'ci_reporter'
+gem 'ci_reporter_test_unit'
