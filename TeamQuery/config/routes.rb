@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  resources :users do
+    resources :surveys, shallow: true
+  end
 
-  get '/survey' => 'surveys#index'
+  #get '/survey' => 'surveys#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

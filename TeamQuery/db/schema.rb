@@ -20,14 +20,18 @@ ActiveRecord::Schema.define(version: 20170501225052) do
   end
 
   create_table "surveys", force: :cascade do |t|
+    t.string   "name"
     t.integer  "happiness_level"
     t.integer  "health_level"
     t.integer  "friend_level"
     t.integer  "difficulty_level"
     t.string   "extra_comments"
+    t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

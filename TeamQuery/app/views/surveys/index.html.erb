@@ -1,1 +1,6 @@
 <h1>Surveys</h1>
+  <div>
+  <% @surveys.each do |s| %>
+   <%= link_to s.name, new_user_survey_path(s) %>
+  <% end %>
+  </div>
