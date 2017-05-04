@@ -6,10 +6,10 @@ class CreateSurveys < ActiveRecord::Migration
       t.integer :health_level
       t.integer :friend_level
       t.integer :difficulty_level
-      t.string :extra_comments
-      t.references :user, index: true
+      t.boolean :taken
+      t.references :users, index: true
       t.timestamps null: false
     end
-   add_foreign_key :surveys, :users
   end
+  add_foreign_key :surveys, :users
 end

@@ -1,4 +1,14 @@
 <h1>This is a survey</h1>
+ <h4><%= @survey.name %><h4>
+ <% if @survey.taken == false %>
  <div>
-  <%= render 'form' %>
+  <p>Our records show you havn't taken this survey yet. Would you like to now?</p>
  </div>
+ <div>
+  <%= link_to 'Take survey', edit_survey_path(@survey) %>
+ </div>
+ <% else %>
+ <div>
+  <p>You've already taken this survey!</p>
+ </div>
+ <% end %>

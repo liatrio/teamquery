@@ -1,4 +1,4 @@
-   <%= form_for([@user, @survey]) do |s| %>
+   <%= form_for(@survey) do |s| %>
    <div>
     <%= s.label 'How happy you would say you are at work?' %><br>
     <%= s.number_field :happiness_level %><br>
@@ -14,10 +14,6 @@
 <div>
     <%= s.label 'Are you challenged by the work you do for your company?' %><br>
     <%= s.number_field :difficulty_level %><br>
-   </div>
-   <div>
-    <%= s.label 'Any additional comments that you would like your work to know?' %><br>
-    <%= s.text_area :extra_comments %><br>
    </div>
     <%= s.submit "submit survey" %>
     <% end %>
