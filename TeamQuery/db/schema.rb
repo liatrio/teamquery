@@ -11,35 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504181548) do
+ActiveRecord::Schema.define(version: 20170504194649) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "happiness_score"
-    t.decimal  "health_score"
-    t.decimal  "friend_score"
-    t.decimal  "difficulty_score"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "happiness_score"
+    t.integer  "happiness_users"
+    t.integer  "health_score"
+    t.integer  "health_users"
+    t.integer  "friendliness_score"
+    t.integer  "friendliness_users"
+    t.integer  "difficulty_score"
+    t.integer  "difficulty_users"
   end
 
-  create_table "surveys", force: :cascade do |t|
-    t.string   "name"
-    t.boolean  "taken"
-    t.integer  "users_id"
+  create_table "questions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "surveyid"
+    t.string   "text"
+    t.string   "trait"
+    t.boolean  "taken"
+    t.integer  "users_id"
   end
 
-  add_index "surveys", ["users_id"], name: "index_surveys_on_users_id"
+  add_index "questions", ["users_id"], name: "index_questions_on_users_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.integer  "company_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "name"
     t.integer  "role"
   end
 
