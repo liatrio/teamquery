@@ -24,6 +24,7 @@ class SurveysController < ApplicationController
   def update
     if @survey.update(survey_params)
       @survey.taken = true
+      @survey.save
       redirect_to survey_url(@survey), notice: 'Survey was updated'
     else
       render :edit
