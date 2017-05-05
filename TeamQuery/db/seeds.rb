@@ -8,7 +8,7 @@
 
 companies = Company.create([
 {
-  name: 'Liatrio', 
+  name: 'Liatrio',
   happiness_score: 0,
   happiness_users: 0,
   health_score: 0,
@@ -17,9 +17,27 @@ companies = Company.create([
   friendliness_users: 0,
   difficulty_score: 0,
   difficulty_users: 0
-}])
+},
+{
+  name: 'Cali Bro\'s Inc',
+  happiness_score: 50,
+  happiness_users: 10,
+  health_score: 75,
+  health_users: 10,
+  friendliness_score: 90,
+  friendliness_users: 10,
+  difficulty_score: 100,
+  difficulty_users: 10
+}
+])
 
 users = User.create([
+{
+  email: 'alphabro@10x.com',
+  password: '10x',
+  company_id: companies[1].id,
+  name: 'AlphaBro'
+},
 {
   email: 'chadd@liatrio.com',
   password: 'shane23237',
