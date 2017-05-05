@@ -5,16 +5,10 @@
     <link href="/assets/bootstrap.css?body=1" media="screen" rel="stylesheet">
   </head>
   <div class="container">
-    <h2>Register Page</h2>
-    <%= form_for(@user) do |f| %>
+    <h2>Register Company Page</h2>
+    <%= form_for(@company) do |f| %>
       <div>
         <%= f.text_field :name, :placeholder => "name" %>
-      </div>
-      <div>
-        <%= f.email_field :email, :placeholder => "email" %>
-      </div>
-      <div>
-        <%= f.password_field :password, :placeholder => "password" %>
       </div>
       <%= f.submit "Register", class: "btn-submit" %>
     <% end %>

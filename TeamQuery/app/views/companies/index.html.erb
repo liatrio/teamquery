@@ -30,7 +30,12 @@
 </nav>
 
 <% if current_user %>
-<h1> <%= current_user.name %> </h1>
+  <h1> Companies </h1>
+  <% @companies.each do |c| %>
+    <div class = 'company'>
+      <p><%= c.name %></p>
+    </div>
+  <% end %>
 <% else %>
-<h1> Not logged in. </h1>
+  <h1> Not logged in. </h1>
 <% end %>

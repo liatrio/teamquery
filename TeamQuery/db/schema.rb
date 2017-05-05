@@ -11,31 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501225052) do
+ActiveRecord::Schema.define(version: 20170504194649) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "happiness_score"
+    t.integer  "happiness_users"
+    t.integer  "health_score"
+    t.integer  "health_users"
+    t.integer  "friendliness_score"
+    t.integer  "friendliness_users"
+    t.integer  "difficulty_score"
+    t.integer  "difficulty_users"
+  end
+
+  create_table "questions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "surveyid"
+    t.string   "text"
+    t.string   "trait"
+    t.boolean  "taken"
+    t.integer  "users_id"
   end
 
-  create_table "surveys", force: :cascade do |t|
-    t.integer  "happiness_level"
-    t.integer  "health_level"
-    t.integer  "friend_level"
-    t.integer  "difficulty_level"
-    t.string   "extra_comments"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
+  add_index "questions", ["users_id"], name: "index_questions_on_users_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.integer  "company_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.integer  "role"
   end
 
   add_index "users", ["company_id"], name: "index_users_on_company_id"
