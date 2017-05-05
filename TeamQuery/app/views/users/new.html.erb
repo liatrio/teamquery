@@ -16,6 +16,10 @@
       <div>
         <%= f.password_field :password, :placeholder => "password" %>
       </div>
+      <div>
+        <% options = options_from_collection_for_select(@companies, 'id', 'name') %>
+        <%= f.select :company_id,  options %>
+      </div>
       <%= f.submit "Register", class: "btn-submit" %>
     <% end %>
   </div>
