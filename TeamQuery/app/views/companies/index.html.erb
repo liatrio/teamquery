@@ -8,55 +8,31 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">TeamQuery</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <% if current_user %>
-      <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-      <li><%= link_to "Companies", 'companies' %></li>
-      <li><%= link_to "Register Company", 'register_companies' %></li>
+  <% if current_user %>
+    <h1> Company Stats</h1>
+    <div class = 'company'>
+      <% if @company.happiness_users != 0 %>
+        <% hap_score = (@company.happiness_score * 1.0) / @company.happiness_users %>
       <% else %>
-      <li><%= link_to "Login", 'login' %></li>
-      <li><%= link_to "Register", 'register' %></li>
-      <li><%= link_to "Companies", 'companies' %></li>
-      <li><%= link_to "Register Company", 'register_companies' %></li>
+        <% hap_score = 0 %>
       <% end %>
-    </ul>
-  </div>
-</nav>
-
-
-
-
-<% if current_user %>
-  <h1> Company Stats</h1>
-  <div class = 'company'>
-    <% if @company.happiness_users != 0 %>
-      <% hap_score = (@company.happiness_score * 1.0) / @company.happiness_users %>
-    <% else %>
-      <% hap_score = 0 %>
-    <% end %>
-    <% if @company.health_users != 0 %>
-      <% heal_score = (@company.health_score * 1.0) / @company.health_users %>
-    <% else %>
-      <% heal_score = 0 %>
-    <% end %>
-    <% if @company.friendliness_users != 0 %>
-      <% friend_score = (@company.friendliness_score * 1.0) / @company.friendliness_users %>
-    <% else %>
-      <% friend_score = 0 %>
-    <% end %>
-    <% if @company.difficulty_users != 0 %>
-      <% diff_score = (@company.difficulty_score * 1.0) / @company.difficulty_users %>
-    <% else %>
-      <% diff_score = 0 %>
-    <% end %>
-    <p><%= @company.name %> happiness: <%= hap_score %> health: <%= heal_score %> friendliness: <%= friend_score %> difficulty: <%= diff_score %></p>
-  </div>
-<% else %>
-  <h1> Not logged in. </h1>
-<% end %>
+      <% if @company.health_users != 0 %>
+        <% heal_score = (@company.health_score * 1.0) / @company.health_users %>
+      <% else %>
+        <% heal_score = 0 %>
+      <% end %>
+      <% if @company.friendliness_users != 0 %>
+        <% friend_score = (@company.friendliness_score * 1.0) / @company.friendliness_users %>
+      <% else %>
+        <% friend_score = 0 %>
+      <% end %>
+      <% if @company.difficulty_users != 0 %>
+        <% diff_score = (@company.difficulty_score * 1.0) / @company.difficulty_users %>
+      <% else %>
+        <% diff_score = 0 %>
+      <% end %>
+      <p><%= @company.name %> happiness: <%= hap_score %> health: <%= heal_score %> friendliness: <%= friend_score %> difficulty: <%= diff_score %></p>
+    </div>
+  <% else %>
+    <h1> Not logged in. </h1>
+  <% end %>

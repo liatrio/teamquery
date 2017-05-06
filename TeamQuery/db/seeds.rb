@@ -8,6 +8,17 @@
 
 companies = Company.create([
 {
+  name: 'None',
+  happiness_score: 0,
+  happiness_users: 0,
+  health_score: 0,
+  health_users: 0,
+  friendliness_score: 0,
+  friendliness_users: 0,
+  difficulty_score: 0,
+  difficulty_users: 0
+},
+{
   name: 'Liatrio',
   happiness_score: 0,
   happiness_users: 0,

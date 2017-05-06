@@ -2,10 +2,14 @@ class CompaniesController < ApplicationController
   def index
     #@companies = Company.all
     if current_user
+      @nav_company = Company.find_by id: current_user.company_id
       @company = Company.find_by id: current_user.company_id
     end
   end
   def new
+    if current_user
+      @nav_company = Company.find_by id: current_user.company_id
+    end
     @company = Company.new
   end
   def create
@@ -21,6 +25,8 @@ class CompaniesController < ApplicationController
       :difficulty_users => 0
     }
     if @company.save
+      @user = User.find_by name: current_user.name
+      @user.update_attribute(:company_id, @company.id)
       redirect_to '/companies'
     else
       redirect_to 'register_companies'
