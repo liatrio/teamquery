@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505190854) do
+ActiveRecord::Schema.define(version: 20170506203104) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -35,14 +35,15 @@ ActiveRecord::Schema.define(version: 20170505190854) do
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "users_id"
-    t.integer  "questions_id"
     t.boolean  "taken"
+    t.integer  "question1"
+    t.integer  "question2"
+    t.integer  "question3"
   end
 
-  add_index "surveys", ["questions_id"], name: "index_surveys_on_questions_id"
   add_index "surveys", ["users_id"], name: "index_surveys_on_users_id"
 
   create_table "users", force: :cascade do |t|
