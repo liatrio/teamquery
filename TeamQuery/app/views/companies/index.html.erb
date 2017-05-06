@@ -46,12 +46,12 @@
       <% heal_score = 0 %>
     <% end %>
     <% if @company.friendliness_users != 0 %>
-      <% friend_score = @company.friendliness_score / @company.friendliness_users %>
+      <% friend_score = (@company.friendliness_score * 1.0) / @company.friendliness_users %>
     <% else %>
       <% friend_score = 0 %>
     <% end %>
     <% if @company.difficulty_users != 0 %>
-      <% diff_score = @company.difficulty_score / @company.difficulty_users %>
+      <% diff_score = (@company.difficulty_score * 1.0) / @company.difficulty_users %>
     <% else %>
       <% diff_score = 0 %>
     <% end %>
