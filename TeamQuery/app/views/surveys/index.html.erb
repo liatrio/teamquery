@@ -17,13 +17,27 @@
       <li class="active"><a href="/">Home</a></li>
       <% if current_user %>
       <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-      <li><%= link_to "Surveys", 'survey' %></li>
+      <li><%= link_to "Companies", 'companies' %></li>
+      <li><%= link_to "Register Company", 'register_companies' %></li>
       <% else %>
       <li><%= link_to "Login", 'login' %></li>
       <li><%= link_to "Register", 'register' %></li>
+      <li><%= link_to "Companies", 'companies' %></li>
+      <li><%= link_to "Register Company", 'register_companies' %></li>
       <% end %>
     </ul>
   </div>
 </nav>
 
-<h1>You have no pending surveys</h1>
+<% if current_user %>
+  <h1> Surveys </h1>
+  <% @surveys.each do |s| %>
+    <% if !s.taken %>
+      <li><%= link_to "Survey", survey_path(s) %></li>
+    <% end %>
+  <% end %>
+<% else %>
+  <h1> Not logged in. </h1>
+<% end %>
+
+ <!-- <h1>You have no pending surveys</h1>

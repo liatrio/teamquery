@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/companies' => 'companies#index'
   resources :companies
 
+  get '/surveys' => 'surveys#index'
+  get '/surveys/:id' => 'surveys#show'
+  resources :surveys,:questions
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
