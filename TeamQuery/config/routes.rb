@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/surveys' => 'surveys#index'
   get '/surveys/:id' => 'surveys#show'
+  get '/create_survey' => 'surveys#new'
+  post '/create_survey' => 'surveys#create'
   resources :surveys,:questions
 
   get '/login' => 'sessions#new'
