@@ -33,7 +33,7 @@
   <h1> Surveys </h1>
   <% @surveys.each do |s| %>
     <% if !s.taken %>
-      <li><%= link_to "Survey", survey_path(s) %></li>
+      <li><%= link_to "Survey #{s.id}", survey_path(s) %></li>
     <% end %>
   <% end %>
 <% else %>
