@@ -7,15 +7,6 @@
 
 	<div class="container">
 	  <h2>Register Page</h2>
-<%#	  <button type="button" class="btn">Basic</button>
-	  <button type="button" class="btn btn-default">Default</button>
-	  <button type="button" class="btn btn-primary">Primary</button>
-	  <button type="button" class="btn btn-success">Success</button>
-	  <button type="button" class="btn btn-info">Info</button>
-	  <button type="button" class="btn btn-warning">Warning</button>
-	  <button type="button" class="btn btn-danger">Danger</button>
-	  <button type="button" class="btn btn-link">Link</button>      %>
-
     <%= form_for(@user) do |f| %>
       <div>
         <%= f.text_field :name, :placeholder => "name" %>
@@ -26,19 +17,10 @@
       <div>
         <%= f.password_field :password, :placeholder => "password" %>
       <div>
-	<%= f.text_field :company, :placeholder => "Company name" %>
+        <%= f.text_field :company, :placeholder => "Company name" %>
       </div>
       </div>
-      <%= f.submit "Register", class: "btn-submit" %>
+        <%= f.submit "Register", class: "btn-submit" %>
     <% end %>
-
-    <%#= form_for(@users) do |f| %>
-    <%#= f.label :name %>
-    <%#= f.text_field :name %>
-    <%# end %>
-
-    <%#= form_tag do %>
- <!--       Form contents -->
-    <%# end %>
 	</div>
 </html>

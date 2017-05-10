@@ -1,0 +1,38 @@
+<head>
+  <title>TeamQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <% if current_user %>
+    <h1> Company Stats</h1>
+    <div class = 'company'>
+      <% if @company.happiness_users != 0 %>
+        <% hap_score = (@company.happiness_score * 1.0) / @company.happiness_users %>
+      <% else %>
+        <% hap_score = 0 %>
+      <% end %>
+      <% if @company.health_users != 0 %>
+        <% heal_score = (@company.health_score * 1.0) / @company.health_users %>
+      <% else %>
+        <% heal_score = 0 %>
+      <% end %>
+      <% if @company.friendliness_users != 0 %>
+        <% friend_score = (@company.friendliness_score * 1.0) / @company.friendliness_users %>
+      <% else %>
+        <% friend_score = 0 %>
+      <% end %>
+      <% if @company.difficulty_users != 0 %>
+        <% diff_score = (@company.difficulty_score * 1.0) / @company.difficulty_users %>
+      <% else %>
+        <% diff_score = 0 %>
+      <% end %>
+      <p><%= @company.name %> happiness: <%= hap_score %> health: <%= heal_score %> friendliness: <%= friend_score %> difficulty: <%= diff_score %></p>
+    </div>
+  <% else %>
+    <h1> Not logged in. </h1>
+  <% end %>
