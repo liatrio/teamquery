@@ -29,15 +29,8 @@
   </div>
 </nav>
 
-<% if current_user %>
-  <h1> Surveys </h1>
-  <% @surveys.each do |s| %>
-    <% if !s.taken %>
-      <li><%= link_to "Survey #{s.id}", survey_path(s) %></li>
-    <% end %>
-  <% end %>
-<% else %>
-  <h1> Not logged in. </h1>
-<% end %>
+  <li> <%= @question1.text %></li>
+  <li> <%= @question2.text %></li>
+  <li> <%= @question3.text %></li>
 
- <!-- <h1>You have no pending surveys</h1>
+

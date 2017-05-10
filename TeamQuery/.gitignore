@@ -18,3 +18,4 @@
 
 # Adding secret to gitignore
 /config/secrets.yml
+./Gemfile.lock
