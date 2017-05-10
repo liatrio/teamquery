@@ -46,32 +46,32 @@ users = User.create([
 {
   email: 'alphabro@10x.com',
   password: '10x',
-  company_id: companies[1].id,
+  company_id: companies[2].id,
   name: 'AlphaBro'
 },
 {
   email: 'chadd@liatrio.com',
   password: 'shane23237',
-  company_id: companies[0].id,
+  company_id: companies[1].id,
   name: 'Chadworth'
 },
 {
   email: 'hunterm@liatrio.com',
   password: '10X',
-  company_id: companies[0].id,
+  company_id: companies[1].id,
   name: 'HunterXXXMega'
 },
 
 {
   email: 'jeffg@liatrio.com',
   password: 'xXjoe1337Xx',
-  company_id: companies[0].id,
+  company_id: companies[1].id,
   name: 'J-Guzz'
 },
 {
   email: 'shanem@liatrio.com',
   password: '123',
-  company_id: companies[0].id,
+  company_id: companies[1].id,
   name: 'S. MacBride'
 }])
 
@@ -112,16 +112,22 @@ questions = Question.create([
 surveys = Survey.create([
 {
   users_id: users[0],
-  questions_id: [questions[0].id, questions[1].id, questions[2].id],
-  taken: false
+  taken: false,
+  question1: 0,
+  question2: 1,
+  question3: 2
 },
 {
   users_id: users[1],
-  questions_id: [questions[0].id, questions[1].id, questions[2].id],
-  taken: false
+  taken: false,
+  question1: 3,
+  question2: 4,
+  question3: 5
 },
 {
   users_id: users[2],
-  questions_id: [questions[0].id, questions[1].id, questions[2].id],
-  taken: false
+  taken: false,
+  question1: 6,
+  question2: 7,
+  question3: 8
 }])
