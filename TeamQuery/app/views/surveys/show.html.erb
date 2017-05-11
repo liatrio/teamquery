@@ -1,5 +1,10 @@
-<li> <%= @question1.text %></li>
-<li> <%= @question2.text %></li>
-<li> <%= @question3.text %></li>
-
-
+<%= form_tag "/submit_survey" do %>
+  <%= number_field_tag :survey_id, @survey.id, :readonly => true, :hidden => true %>
+  <li> <%= @question1.text %></li>
+  <%= select_tag "question1", options_for_select((1..10)) %>
+  <li> <%= @question2.text %></li>
+  <%= select_tag "question2", options_for_select((1..10)) %>
+  <li> <%= @question3.text %></li>
+  <%= select_tag "question3", options_for_select((1..10)) %>
+  <%= submit_tag "Submit" %>
+<% end %>

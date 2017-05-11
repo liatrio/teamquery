@@ -1,6 +1,15 @@
 <%= form_tag "/create_survey" do %>
-  <%= text_field_tag "question1", "What is love?" %>
-  <%= text_field_tag "question2", "Baby don't hurt me" %>
-  <%= text_field_tag "question3", "no mo" %>
-  <%= submit_tag "Save" %>
+  <div>
+    <%= text_field_tag "question1", "What is love?" %>
+    <%= select_tag "question1_trait", options_for_select(["happiness", "friendliness", "health", "difficulty"]) %>
+  </div>
+  <div>
+    <%= text_field_tag "question2", "Baby don't hurt me" %>
+    <%= select_tag "question2_trait", options_for_select(["happiness", "friendliness", "health", "difficulty"]) %>
+  </div>
+  <div>
+    <%= text_field_tag "question3", "no mo" %>
+    <%= select_tag "question3_trait", options_for_select(["happiness", "friendliness", "health", "difficulty"]) %>
+  </div>
+  <div><%= submit_tag "Save" %></div>
 <% end %>

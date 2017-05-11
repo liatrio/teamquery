@@ -111,21 +111,21 @@ questions = Question.create([
 
 surveys = Survey.create([
 {
-  users_id: users[0],
+  users_id: users[4].id,
   taken: false,
   question1: 0,
   question2: 1,
   question3: 2
 },
 {
-  users_id: users[1],
+  users_id: users[1].id,
   taken: false,
   question1: 3,
   question2: 4,
   question3: 5
 },
 {
-  users_id: users[2],
+  users_id: users[2].id,
   taken: false,
   question1: 6,
   question2: 7,
